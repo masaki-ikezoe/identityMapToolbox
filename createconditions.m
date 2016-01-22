@@ -1,3 +1,4 @@
+% This is a test comment.
 clear; close all; clc;
 
 %% Select File
