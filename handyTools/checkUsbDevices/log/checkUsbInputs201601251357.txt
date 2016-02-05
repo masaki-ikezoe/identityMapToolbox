@@ -1,0 +1,82 @@
+#[checkUsbDeviceInputs] Check the input from the selected device
+deviceID, keyName, time
+#Input Device ID (0 to 0; -1, all keyboards, -2, all keypads; -3, all keyboards and keypads): 0
+#Press keys to test; "" to quit
+{エラー: <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fprintf')" style="font-weight:bold">fprintf</a>
+関数は 'datetime' の入力に対して定義されません。
+
+エラー: <a href="matlab:matlab.internal.language.introspective.errorDocCallback('checkUsbDeviceInputs', '/home/mokamoto/MATLAB/myToolbox/checkUsbDevices/checkUsbDeviceInputs.m', 34)" style="font-weight:bold">checkUsbDeviceInputs</a> (<a href="matlab: opentoline('/home/mokamoto/MATLAB/myToolbox/checkUsbDevices/checkUsbDeviceInputs.m',34,0)">line 34</a>)
+            fprintf('%d, %s, %s\n', deviceId, keyStr, datetime('now', 'Format',
+            'HH:mm:ss.SSSS'));
+
+
+エラー: <a href="matlab:matlab.internal.language.introspective.errorDocCallback('checkUsbInputs', '/home/mokamoto/MATLAB/myToolbox/checkUsbDevices/checkUsbInputs.m', 14)" style="font-weight:bold">checkUsbInputs</a> (<a href="matlab: opentoline('/home/mokamoto/MATLAB/myToolbox/checkUsbDevices/checkUsbInputs.m',14,0)">line 14</a>)
+checkUsbDeviceInputs(Devices);
+} 
+datetime('now', 'Format', 'HH:mm:ss.SSSS')
+
+ans = 
+
+   13:57:58.2154
+
+datestr(datetime('now', 'Format', 'HH:mm:ss.SSSS'))
+
+ans =
+
+25-Jan-2016 13:58:15
+
+datestr(now, 'Format', 'HH:mm:ss.SSSS')
+{エラー: <a href="matlab:matlab.internal.language.introspective.errorDocCallback('datestr', '/usr/local/MATLAB/R2015a/toolbox/matlab/timefun/datestr.p', 161)" style="font-weight:bold">datestr</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2015a/toolbox/matlab/timefun/datestr.p',161,0)">line 161</a>)
+基軸年は数値でなければなりません。
+} 
+datestr(now, 'HH:mm:ss.SSSS')
+{エラー: <a href="matlab:matlab.internal.language.introspective.errorDocCallback('matlab.internal.datetime.cnv2icudf', '/usr/local/MATLAB/R2015a/toolbox/matlab/timefun/+matlab/+internal/+datetime/cnv2icudf.m', 136)" style="font-weight:bold">matlab.internal.datetime.cnv2icudf</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2015a/toolbox/matlab/timefun/+matlab/+internal/+datetime/cnv2icudf.m',136,0)">line 136</a>)
+認識されない秒の表示形式です。書式文字列: HH:mm:ss.SSSS.
+
+エラー: <a href="matlab:matlab.internal.language.introspective.errorDocCallback('formatdate', '/usr/local/MATLAB/R2015a/toolbox/matlab/timefun/private/formatdate.p', 54)" style="font-weight:bold">formatdate</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2015a/toolbox/matlab/timefun/private/formatdate.p',54,0)">line 54</a>)
+dtstr = matlab.internal.datetime.cnv2icudf(dtstr);
+
+エラー: <a href="matlab:matlab.internal.language.introspective.errorDocCallback('dateformverify', '/usr/local/MATLAB/R2015a/toolbox/matlab/timefun/private/dateformverify.m', 32)" style="font-weight:bold">dateformverify</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2015a/toolbox/matlab/timefun/private/dateformverify.m',32,0)">line 32</a>)
+S = char(formatdate([y,mo,d,h,minute,s],dateformstr,islocal));
+
+エラー: <a href="matlab:matlab.internal.language.introspective.errorDocCallback('datestr', '/usr/local/MATLAB/R2015a/toolbox/matlab/timefun/datestr.p', 194)" style="font-weight:bold">datestr</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2015a/toolbox/matlab/timefun/datestr.p',194,0)">line 194</a>)
+S = dateformverify(dtnumber, dateformstr, islocal);
+} 
+now
+
+ans =
+
+   7.3635e+05
+
+datestr(now,'yyyymmddHHMM')
+
+ans =
+
+201601251359
+
+datestr(now,'HH:mm:ss')
+
+ans =
+
+13:01:50
+
+datestr(now,'HH:mm:ss.SSS')
+{エラー: <a href="matlab:matlab.internal.language.introspective.errorDocCallback('matlab.internal.datetime.cnv2icudf', '/usr/local/MATLAB/R2015a/toolbox/matlab/timefun/+matlab/+internal/+datetime/cnv2icudf.m', 136)" style="font-weight:bold">matlab.internal.datetime.cnv2icudf</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2015a/toolbox/matlab/timefun/+matlab/+internal/+datetime/cnv2icudf.m',136,0)">line 136</a>)
+認識されない秒の表示形式です。書式文字列: HH:mm:ss.SSS.
+
+エラー: <a href="matlab:matlab.internal.language.introspective.errorDocCallback('formatdate', '/usr/local/MATLAB/R2015a/toolbox/matlab/timefun/private/formatdate.p', 54)" style="font-weight:bold">formatdate</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2015a/toolbox/matlab/timefun/private/formatdate.p',54,0)">line 54</a>)
+dtstr = matlab.internal.datetime.cnv2icudf(dtstr);
+
+エラー: <a href="matlab:matlab.internal.language.introspective.errorDocCallback('dateformverify', '/usr/local/MATLAB/R2015a/toolbox/matlab/timefun/private/dateformverify.m', 32)" style="font-weight:bold">dateformverify</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2015a/toolbox/matlab/timefun/private/dateformverify.m',32,0)">line 32</a>)
+S = char(formatdate([y,mo,d,h,minute,s],dateformstr,islocal));
+
+エラー: <a href="matlab:matlab.internal.language.introspective.errorDocCallback('datestr', '/usr/local/MATLAB/R2015a/toolbox/matlab/timefun/datestr.p', 194)" style="font-weight:bold">datestr</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2015a/toolbox/matlab/timefun/datestr.p',194,0)">line 194</a>)
+S = dateformverify(dtnumber, dateformstr, islocal);
+} 
+datestr(now,'HH:mm:ss.FFF')
+
+ans =
+
+14:01:05.881
+
+checkUsbInputs

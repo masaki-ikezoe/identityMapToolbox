@@ -1,0 +1,49 @@
+function checkUsbDeviceInputs(Devices)
+% Check inputs from USB-HID devices
+
+nDevices = length(Devices);
+
+% Initialise paramters
+ProgKey.quit = KbName('q');
+ProgKey.trig = KbName('t');
+ProgKey.res = KbName('3#');
+
+% Initiate keyboard
+myKeyCheck;
+
+% Check the input from the selected device
+deviceProg = 1;
+while deviceProg
+    % Select a device
+    deviceId = input(sprintf('Input Device ID (0 to %d; -1, all keyboards, -2, all keypads; -3, all keyboards and keypads): ', nDevices-1));
+    
+    % Get input from the device
+    fprintf('Press keys to test; ''%s'' to quit\n', ProgKey.quit);
+    iwait = 1;
+    while iwait % wait for the specific key set by 'triggerKey'
+        % WaitSecs(0.01); 
+        % Added by MO, 10-12-2015
+        [KeyIsDown, ~, KeyCode] = KbCheck(deviceId);
+        if KeyIsDown
+            % Check Any Key Inputs
+            keyStr = KbName(find(KeyCode));
+            %disp(['''' keyStr '''' ' is down']);
+            fprintf('Device ID %d, Key "%s" key was pressed at %s.\n', keyStr, datestr(now, 'HH:MM:SS.FFF'));
+            % Check Specific keys
+%             if KeyCode(ProgKey.trig)
+%                 fprintf('''%s'' is down\n', ProgKey.trig);
+%             elseif KeyCode(ProgKey.res):
+%                 fprintf('''%s'' is down\n', ProgKey.res);
+%             end;
+        end;
+        
+        % To exit
+        [KeyIsDown, ~, KeyCode] = KbCheck(deviceId);
+        if KeyIsDown && KeyCode(ProgKey.quit)
+            iwait = 0;
+        end
+    end
+    deviceProg = input('Check another device? (Yes=1/No=0): ');
+end
+
+end
