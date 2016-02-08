@@ -62,8 +62,8 @@ imgFeatures = struct2table(stimInfo);
 imgFeatures(strcmp(imgFeatures.name, 'blank'),:) = [];
 
 % Rename pathstr % FIXME: Seletctable
-imgFeatures.pathstr(strcmp(imgFeatures.pathstr, '/home/mokamoto/MATLAB/myToolbox/identityMap_dev/experiments/images/facebookProfPics/IkezoeMasaki/selectedImages02'),:) = cellstr('IkezoeMasaki');
-imgFeatures.pathstr(strcmp(imgFeatures.pathstr, '/home/mokamoto/MATLAB/myToolbox/identityMap_dev/experiments/images/facebookProfPics/OkamotoMasahiro/selectedImages01'),:) = cellstr('OkamotoMasahiro');
+imgFeatures.pathstr(strcmp(imgFeatures.pathstr, '/home/mokamoto/MATLAB/myToolbox/identityMap_dev/experiments/images/facebookProfPics/subject01/selectedImages02'),:) = cellstr('subject01');
+imgFeatures.pathstr(strcmp(imgFeatures.pathstr, '/home/mokamoto/MATLAB/myToolbox/identityMap_dev/experiments/images/facebookProfPics/subject02/selectedImages01'),:) = cellstr('subject02');
 
 
 imgFeatures.pathstr = categorical(imgFeatures.pathstr);
