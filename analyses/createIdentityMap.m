@@ -8,9 +8,9 @@ roiPath = startPath;
 roi = createroi(tVal, roiPath);
 
 %% Select Beta of the "identities" task
-nBetaOneSession = 53; % TODO: You have to change this value
-nSessions = 6; % TODO: Change it, if you need.
-c = repmat([ones(1, nBetaOneSession), zeros(1, 6)], 1, nSessions);
+nIdentities = input('The number of the identities: '); % TODO: You have to change this value
+nSessions = input('The number of sessions: '); % TODO: Change it, if you need.
+c = repmat([ones(1, nIdentities), zeros(1, 6)], 1, nSessions);
 betaPath = startPath;
 spmBeta = readbeta(roi, c, nSessions, betaPath)'; % beta in rows; voxels in columns
 % Exclude columns with NaN
@@ -18,9 +18,9 @@ isNanColumn = logical(isnan(sum(spmBeta)));
 spmBeta = spmBeta(:, ~isNanColumn);
 % Average Beta over Sessions
 [nBetaAllSessions, nVoxels] = size(spmBeta);
-tmp = zeros(nBetaOneSession, nVoxels);
+tmp = zeros(nIdentities, nVoxels);
 for iSession = 1:nSessions
-    tmp = tmp + spmBeta(1+(iSession-1)*nBetaOneSession:iSession*nBetaOneSession, :); 
+    tmp = tmp + spmBeta(1+(iSession-1)*nIdentities:iSession*nIdentities, :); 
 end
 spmBeta = tmp/nSessions;
 
