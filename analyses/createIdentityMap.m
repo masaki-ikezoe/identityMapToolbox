@@ -3,7 +3,7 @@ clear; close all; clc;
 startPath = fullfile('C:', 'data');
 
 %% Create ROI based on a localizer task
-tVal = 5.00; % TODO: You have to change this value; 3.14 for FFA, 3.15 for Familiarity
+tVal = input('T-value for threshold: '); % TODO: You have to change this value; 3.14 for FFA, 3.15 for Familiarity
 roiPath = startPath;
 roi = createroi(tVal, roiPath);
 
