@@ -2,7 +2,7 @@ function [conditions] = createconditions(expName, dataDir)
 
 %% Initialize parameters
 if ~exist('dataDir', 'var')
-    dataDir = fullfile('../../../../data');
+    dataDir = fullfile('C:', 'data');
 end
 
 %% Select File
