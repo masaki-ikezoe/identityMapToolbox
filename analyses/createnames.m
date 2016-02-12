@@ -4,6 +4,10 @@ switch expName
     case 'identities'
         % Extract a stimulus table
         stimTbl = expConditions.stim;
+        % If Variable "filename" does NOT exist
+        if any(~strcmp(stimTbl.Properties.VariableNames, 'filename'))
+            stimTbl.filename = stimTbl.name;
+        end
         % Extract unique indentities
         identities = unique(stimTbl.filename);
         identities = identities(~strcmp(identities, 'blank'));
@@ -15,4 +19,6 @@ switch expName
         
     case 'locFfa'
         names = {'Faces', 'Scrambled Faces'};
+end
+
 end
