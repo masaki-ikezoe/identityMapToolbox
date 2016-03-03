@@ -1,10 +1,10 @@
-function expConditions = locFamil()
+function expConditions = classmate()
 
 [funcDir, expname] = fileparts(mfilename('fullpath'));
 Params.expname = expname;
 
-%% Load General Settings
-Params.settingFile = [funcDir filesep 'settings' filesep 'setting01.m'];
+%% Load General Settings55
+Params.settingFile = [funcDir filesep 'settings' filesep 'settingForClassmate.m'];
 run(Params.settingFile);
 
 % Get subject name
@@ -13,14 +13,10 @@ Params.subjectName = char(inputdlg('Subject Name: ', mfilename));
 
 %% Load Specific Settings
 % Set image directory
-Params.imgDir{1} = fullfile(Params.startPath, 'stim', 'facebookProfPics', 'subject01', 'selectedImages02');
-Params.imgDir{2} = fullfile(Params.startPath, 'stim', 'facebookProfPics', 'subject02', 'selectedImages01');
+Params.imgDir = fullfile(funcDir, 'images', 'Classmate');
 
 % Set image extension
 Params.imgExtension = 'jpg';
-
-% Set the number of images to be selected in each directory
-Params.nSelectImages = 53; % TODO: you can modify the number
 
 % Set resized size
 Params.rowSize = 720;
@@ -33,12 +29,13 @@ Params.nRepitition = 1;
 Params.continuity = 0;
 
 % Probability of blanks
-Params.pBlank = 0.3;
+Params.pBlank = 0;
 
 % Folder where a logfile is saved.
-Params.stimlogFolder= fullfile(Params.startPath, 'logs', 'logLocFamil');
+Params.stimlogFolder= [funcDir filesep 'logs' filesep 'logClassmate'];
+
 
 %% Do Familiarity Localization
-expConditions = doLocFamil(Params);
+expConditions = doClassmate(Params);
 
 end

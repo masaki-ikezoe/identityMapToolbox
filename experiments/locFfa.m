@@ -43,8 +43,7 @@ Params.pBlank = 0.3;
 % Params.bgColor = [128 128 128]; % TODO: Change to gray color, if you want
 
 % Folder where a logfile is saved.
-Params.stimlogFolder= [funcDir filesep 'logs' filesep 'logLocFfa'];
-
+Params.stimlogFolder= fullfile(Params.startPath, 'logs', 'logLocFfa');
 
 %% Do Familiarity Localization
 expConditions = doLocFfa(Params);

@@ -8,7 +8,7 @@ if nargin < 1
         trig = 't';
     end
     if ~exist('res', 'var')
-        res = '3#';
+        res = '3';
     end
 end
 

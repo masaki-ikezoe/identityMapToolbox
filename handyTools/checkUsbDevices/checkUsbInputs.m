@@ -8,10 +8,10 @@ Devices = getUsbDevices;
 Devices = checkUsbDevices(Devices);
 
 %% Check Imput From USB Devices
-filename = ['log' filesep mfilename datestr(now, 'yyyymmddHHMM') '.txt'];
+filename = ['log' filesep 'test' datestr(now, 'yyyymmddHHMM') '.txt'];
 
 diary(filename);
-checkUsbDeviceInputs(Devices, 't', '3#');
+checkUsbDeviceInputs(Devices, 't', '3');
 diary off;
 
 %% Read Result

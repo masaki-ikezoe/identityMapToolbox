@@ -13,7 +13,7 @@ Params.subjectName = char(inputdlg('Subject Name: ', mfilename));
 
 %% Load Specific Settings
 % Set image directory
-Params.imgDir = fullfile(funcDir, 'images', 'facebookProfPics', 'subject01', 'selectedImages02');
+Params.imgDir = fullfile(Params.startPath, 'stim', 'facebookProfPics', 'subject01', 'selectedImages02');
 
 % Set image extension
 Params.imgExtension = 'jpg';
@@ -32,7 +32,7 @@ Params.continuity = 0;
 Params.pBlank = 0.3;
 
 % Folder where a logfile is saved.
-Params.stimlogFolder= [funcDir filesep 'logs' filesep 'logIdentities'];
+Params.stimlogFolder= fullfile(Params.startPath, 'logs', 'logIdentities');
 
 
 %% Do Familiarity Localization
